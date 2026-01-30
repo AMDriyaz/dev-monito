@@ -1,65 +1,134 @@
-import Image from "next/image";
+import HeroBanner from '@/components/HeroBanner';
+
+import PetCard from '@/components/PetCard';
+import FeatureSection from '@/components/FeatureSection';
+import { Button } from '@/components/ui/Button';
+import { ChevronRight } from 'lucide-react';
+import { Container } from '@/components/Container';
+import PetSellers from '@/components/PetSellers';
+
+const puppies = [
+    {
+        id: "MO231",
+        name: "Pomeranian White",
+        gender: "Male",
+        age: "02 months",
+        price: "6.900.000 VND",
+        image: "/images/dog-image-1.png", // Reuse for now or generate more later
+    },
+    {
+        id: "MO502",
+        name: "Poodle Tiny Yellow",
+        gender: "Female",
+        age: "02 months",
+        price: "3.900.000 VND",
+        image: "/images/dog-image-2.png",
+    },
+    {
+        id: "MO102",
+        name: "Poodle Tiny Sepia",
+        gender: "Male",
+        age: "02 months",
+        price: "4.000.000 VND",
+        image: "/images/dog-image-3.png",
+    },
+    {
+        id: "MO512",
+        name: "Alaskan Malamute Grey",
+        gender: "Male",
+        age: "02 months",
+        price: "8.900.000 VND",
+        image: "/images/dog-image-4.png",
+    },
+    {
+        id: "MO231",
+        name: "Pembroke Corgi",
+        gender: "Male",
+        age: "02 months",
+        price: "7.900.000 VND",
+        image: "/images/dog-image-5.png",
+    },
+    {
+        id: "MO502",
+        name: "Pembroke Corgi",
+        gender: "Female",
+        age: "02 months",
+        price: "9.000.000 VND",
+        image: "/images/dog-image-6.png",
+    },
+    {
+        id: "MO231",
+        name: "Pomeranian White",
+        gender: "Female",
+        age: "02 months",
+        price: "6.500.000 VND",
+        image: "/images/dog-image-7.png",
+    },
+    {
+        id: "MO502",
+        name: "Poodle Tiny",
+        gender: "Female",
+        age: "02 months",
+        price: "5.000.000 VND",
+        image: "/images/dog-image-8.png",
+    },
+] as const;
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    return (
+        <div className="">
+            <HeroBanner />
+
+            <Container className="py-16">
+                <div className="flex justify-between items-end mb-8">
+                    <div>
+                        <h3 className="text-black font-medium mb-1">Whats new?</h3>
+                        <h2 className="text-2xl font-bold text-monito-blue">Take A Look At Some Of Our Pets</h2>
+                    </div>
+                    <Button variant="outline" className="hidden lg:flex gap-1 border-monito-blue rounded-full px-8">
+                        View All <ChevronRight size={16} />
+                    </Button>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                    {puppies.map((puppy, i) => (
+                        <PetCard key={i} {...puppy} />
+                    ))}
+                </div>
+
+                <div className="mt-8 flex justify-center lg:hidden">
+                    <Button variant="outline" className="w-full gap-1 border-monito-blue rounded-full">
+                        View All <ChevronRight size={16} />
+                    </Button>
+                </div>
+            </Container>
+
+            <FeatureSection
+                title="One More Friend"
+                subtitle="Thousands More Fun!"
+                description="Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!"
+                image="/images/feature_woman_dog.png"
+                imagePosition="left"
+                variant="dark-blue"
+                textAlign="right"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+            <PetSellers />
+
+            <div className="lg:block hidden">
+                <FeatureSection
+                    title="Adoption"
+                    subtitle="We need help. so do they."
+                    description="Adopt a pet and give it a home, it will be love you back unconditionally."
+                    image="/images/handdog.png"
+                    imagePosition="right"
+                    variant="dark-blue"
+                    backgroundColor='#FFB775'
+                    shape1Color='#FCEED5'
+                    shape2Color='#FCEED5'
+                    swapShapes={true}
+                />
+            </div>
         </div>
-      </main>
-    </div>
-  );
+    );
 }

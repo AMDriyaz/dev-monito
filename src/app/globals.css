@@ -5,22 +5,62 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-monito-blue: #003459;
+  --color-monito-yellow: #F7DBA7;
+  --color-monito-red: #FF564F;
+  --color-monito-dark-gray: #667479;
+  --color-monito-light-gray: #99A2A5;
+  --color-monito-cream: #FDF8EB;
+  --font-sans: 'SVN-Gilroy', sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  @apply antialiased;
+}
+
+/* Global Layout */
+.monito-container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 100%;
+}
+
+@media (min-width: 1280px) {
+  .monito-container {
+    padding-left: 131px;
+    padding-right: 131px;
+  }
+}
+
+
+/* CTA Styles */
+.cta-medium {
+  font-family: 'SVN-Gilroy', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Scroll Animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  animation: scroll 20s linear infinite;
+  min-width: 100%;
 }
