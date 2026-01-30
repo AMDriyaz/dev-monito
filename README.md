@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Monito - Pet Adoption Platform
 
-## Getting Started
+Monito is a modern, responsive web application for pet adoption, built with the latest web technologies. It connects pet lovers with their future companions through a beautiful and user-friendly interface.
 
-First, run the development server:
+## 🚀 Technologies
+
+-   **Framework**: [Next.js](https://nextjs.org/) (App Directory)
+-   **Language**: [TypeScript](https://www.typescriptlang.org/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **Icons**: [Lucide React](https://lucide.dev/)
+-   **Fonts**: Custom font configuration (e.g., SVN-Gilroy or defaults)
+
+## 🛠️ Getting Started
+
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-   `src/app`: Application routes and pages.
+-   `src/components`: Reusable UI components.
+    -   `HeroBanner.tsx`: Main landing area with responsive layout.
+    -   `FeatureSection.tsx`: Highlighted content sections.
+    -   `PetCard.tsx`: Display card for individual pets.
+    -   `PetSellers.tsx`: Carousel/Grid of pet partners.
+    -   `Header.tsx` & `Footer.tsx`: Global navigation and site info.
 
-## Learn More
+## 🎨 Features
 
-To learn more about Next.js, take a look at the following resources:
+-   **Responsive Design**: Optimized for both desktop and mobile viewing.
+-   **Interactive Components**: Hover effects, mobile drawers, and smooth transitions.
+-   **Dynamic Content**: structured data for pets and sellers.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is for educational and portfolio purposes.
