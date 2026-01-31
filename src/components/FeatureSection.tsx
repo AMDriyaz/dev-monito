@@ -7,8 +7,9 @@ import { Rectangle } from './ui/Rectangle';
 
 interface FeatureSectionProps {
     title: string;
+    titleIcon?: React.ReactNode;
     subtitle: string;
-    description: string;
+    description: string | React.ReactNode;
     image: string;
     imagePosition?: 'left' | 'right';
     variant?: 'default' | 'dark-blue';
@@ -23,6 +24,7 @@ interface FeatureSectionProps {
 
 const FeatureSection = ({
     title,
+    titleIcon,
     subtitle,
     description,
     image,
@@ -60,7 +62,7 @@ const FeatureSection = ({
 
     if (variant === 'dark-blue') {
         return (
-            <Container className="py-8">
+            <Container className="pt-[32px] pb-[60px]">
                 <section
                     className="relative overflow-hidden rounded-[20px] w-full min-h-[378px] lg:h-[378px] flex flex-col lg:flex-row items-center justify-between"
                     style={{ backgroundColor: backgroundColor }}
@@ -75,10 +77,15 @@ const FeatureSection = ({
                         imagePosition === 'left' ? "lg:order-2" : "lg:order-1"
                     )}>
                         <div className="space-y-2">
-                            <h2 className="text-[36px] lg:text-[52px] font-bold text-[#003459] leading-tight">
+                            {titleIcon && (
+                                <div className="mb-4 flex justify-center lg:justify-start">
+                                    {titleIcon}
+                                </div>
+                            )}
+                            <h2 className="text-[36px] lg:text-[52px] font-extrabold text-[#003459] leading-tight">
                                 {title}
                             </h2>
-                            <h3 className="text-[24px] lg:text-[36px] font-semibold text-[#003459] leading-tight capitalize">
+                            <h3 className="text-[24px] lg:text-[36px] font-bold text-[#003459] leading-tight capitalize">
                                 {subtitle}
                             </h3>
                             <p className="text-[#242B33] text-[12px] font-medium leading-relaxed max-w-md mx-auto lg:mx-0">

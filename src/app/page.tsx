@@ -1,5 +1,4 @@
 import HeroBanner from '@/components/HeroBanner';
-
 import PetCard from '@/components/PetCard';
 import FeatureSection from '@/components/FeatureSection';
 import { Button } from '@/components/ui/Button';
@@ -43,7 +42,7 @@ const puppies = [
     },
     {
         id: "MO231",
-        name: "Pembroke Corgi",
+        name: "Pembroke Corgi Cream",
         gender: "Male",
         age: "02 months",
         price: "7.900.000 VND",
@@ -51,7 +50,7 @@ const puppies = [
     },
     {
         id: "MO502",
-        name: "Pembroke Corgi",
+        name: "Pembroke Corgi Tricolor",
         gender: "Female",
         age: "02 months",
         price: "9.000.000 VND",
@@ -66,8 +65,8 @@ const puppies = [
         image: "/images/dog-image-7.png",
     },
     {
-        id: "MO502",
-        name: "Poodle Tiny",
+        id: "MO512",
+        name: "Poodle Tiny  Dairy Cow",
         gender: "Female",
         age: "02 months",
         price: "5.000.000 VND",
@@ -80,7 +79,7 @@ export default function Home() {
         <div className="">
             <HeroBanner />
 
-            <Container className="py-16">
+            <Container className="pt-[60px] pb-[32px]">
                 <div className="flex justify-between items-end mb-8">
                     <div>
                         <h3 className="text-black font-medium mb-1">Whats new?</h3>
@@ -91,7 +90,7 @@ export default function Home() {
                     </Button>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[20px]">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
                     {puppies.map((puppy, i) => (
                         <PetCard key={i} {...puppy} />
                     ))}
@@ -131,7 +130,12 @@ export default function Home() {
                 <FeatureSection
                     title="Adoption"
                     subtitle="We need help. so do they."
-                    description="Adopt a pet and give it a home, it will be love you back unconditionally."
+                    description={
+                        <>
+                            Adopt a pet and give it a home, <br />
+                            it will be love you back unconditionally.
+                        </>
+                    }
                     image="/images/handdog.png"
                     imagePosition="right"
                     variant="dark-blue"

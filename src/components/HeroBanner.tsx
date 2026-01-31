@@ -103,7 +103,7 @@ const HeroBanner = () => {
                     rotation={25.23}
                     borderRadius={99}
                     top={-639}
-                    left={-353}
+                    left={-336}
                     hideOnMobile={true}
                     animate={false}
                     animationDuration={30}
@@ -168,7 +168,7 @@ const HeroBanner = () => {
                     rotation={22}
                     borderRadius={20}
                     top={146}
-                    left={22}
+                    left={43}
                     hideOnMobile={true}
                     animate={false}
                     animationDuration={25}
@@ -207,7 +207,7 @@ const HeroBanner = () => {
                     {/* Text Content */}
                     <div className="lg:col-span-5 relative z-20 flex flex-col items-start sm:items-center lg:items-start lg:pb-0">
                         <div className="relative lg:mb-6 mb-3 text-left sm:text-center lg:text-left">
-                            <h1 className="text-[46px] lg:text-[60px] font-black leading-[60px] lg:leading-[68px] text-monito-blue">
+                            <h1 className="text-[46px] lg:text-[60px] font-extrabold leading-[60px] lg:leading-[68px] text-monito-blue">
                                 One More Friend
                             </h1>
                             <h2 className="text-[28px] lg:text-[46px] font-bold leading-[38px] lg:leading-[60px] text-monito-blue">

@@ -11,8 +11,8 @@ interface PetCardProps {
 
 const PetCard = ({ id, name, gender, age, price, image }: PetCardProps) => {
     return (
-        <div className="bg-white p-2 rounded-[12px] shadow-sm hover:shadow-lg transition-shadow duration-300 w-[185px] h-[317px] xl:w-[280px] xl:h-[378px]">
-            <div className="relative aspect-square w-full rounded-[10px] overflow-hidden mb-4 pt-2 px-2">
+        <div className="bg-white p-2 rounded-[12px] shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div className="relative aspect-square w-full rounded-[10px] overflow-hidden mb-4">
                 <Image
                     src={image}
                     alt={name}
