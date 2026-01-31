@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function Footer() {
     return (
         <footer
-            className="pt-[80px] pb-[40px] rounded-t-[40px] mt-[28px]"
+            className="lg:pt-[80px] pt-[40px] pb-[40px] rounded-t-[40px]"
             style={{ background: "linear-gradient(102.87deg, #FCEED5 6.43%, #FCEED5 78.33%, #FFE7BA 104.24%)" }}
         >
             <Container>

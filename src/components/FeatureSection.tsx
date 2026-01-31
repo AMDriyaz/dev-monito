@@ -3,6 +3,7 @@ import { Button } from './ui/Button';
 import { cn } from '@/lib/utils';
 import { PlayCircle } from 'lucide-react';
 import { Container } from './Container';
+import { Rectangle } from './ui/Rectangle';
 
 interface FeatureSectionProps {
     title: string;
@@ -12,10 +13,12 @@ interface FeatureSectionProps {
     imagePosition?: 'left' | 'right';
     variant?: 'default' | 'dark-blue';
     backgroundColor?: string;
-    shape1Color?: string;
-    shape2Color?: string;
-    swapShapes?: boolean;
+    decorativeShapes?: React.ReactNode;
     textAlign?: 'left' | 'center' | 'right';
+    buttonAlign?: 'left' | 'center' | 'end';
+    imageSpacing?: number | { top?: number; right?: number; bottom?: number; left?: number };
+    imageWidth?: string;
+    imageHeight?: string;
 }
 
 const FeatureSection = ({
@@ -26,10 +29,12 @@ const FeatureSection = ({
     imagePosition = 'right',
     variant = 'default',
     backgroundColor = '#003459',
-    shape1Color = '#FCEED5',
-    shape2Color = '#002A48',
-    swapShapes = false,
-    textAlign = 'left'
+    decorativeShapes,
+    textAlign = 'left',
+    buttonAlign = 'left',
+    imageSpacing = 0,
+    imageWidth,
+    imageHeight
 }: FeatureSectionProps) => {
 
     const alignmentClasses = {
@@ -38,50 +43,50 @@ const FeatureSection = ({
         right: "items-center lg:items-end text-center lg:text-right"
     };
 
+    const buttonAlignmentClasses = {
+        left: "justify-center lg:justify-start",
+        center: "justify-center",
+        end: "justify-center lg:justify-end"
+    };
+
+    // Handle imageSpacing - can be a number or object with individual sides
+    const getImagePadding = () => {
+        if (typeof imageSpacing === 'number') {
+            return `${imageSpacing}px`;
+        }
+        const { top = 0, right = 0, bottom = 0, left = 0 } = imageSpacing || {};
+        return `${top}px ${right}px ${bottom}px ${left}px`;
+    };
+
     if (variant === 'dark-blue') {
         return (
             <Container className="py-8">
                 <section
-                    className="relative overflow-hidden rounded-[20px] w-full min-h-[378px] flex flex-col lg:flex-row items-center justify-between"
+                    className="relative overflow-hidden rounded-[20px] w-full min-h-[378px] lg:h-[378px] flex flex-col lg:flex-row items-center justify-between"
                     style={{ backgroundColor: backgroundColor }}
                 >
-                    {/* Decorative Square 1 (Standard: Right Side. Swap: Left Side) */}
-                    <div
-                        className={cn(
-                            "absolute lg:-bottom-[44px] bottom-[265px] w-[787px] h-[787px] rounded-[99px] rotate-[34deg] z-0 opacity-100 pointer-events-none",
-                            swapShapes ? "lg:-left-[196px]" : "lg:-right-[196px]"
-                        )}
-                        style={{ backgroundColor: shape1Color }}
-                    ></div>
-
-                    {/* Decorative Square 2 (Standard: Left Side. Swap: Right Side) */}
-                    <div
-                        className={cn(
-                            "absolute lg:-bottom-[360px] bottom-[-630px] w-[782px] h-[635px] rounded-[99px] rotate-[35deg] z-0 opacity-100 pointer-events-none",
-                            swapShapes ? "lg:-right-[215px]" : "lg:-left-[215px]"
-                        )}
-                        style={{ backgroundColor: shape2Color }}
-                    ></div>
+                    {/* Decorative Shapes */}
+                    {decorativeShapes}
 
                     {/* Content (Left on Desktop, Top on Mobile) */}
                     <div className={cn(
-                        "relative z-10 w-full lg:w-1/2 lg:px-[80px] px-4 py-[40px] flex flex-col space-y-6 order-1",
+                        "relative z-10 w-full lg:w-1/2 lg:px-[80px] px-4 py-[40px] lg:py-[64px] flex flex-col space-y-6 order-1",
                         alignmentClasses[textAlign],
                         imagePosition === 'left' ? "lg:order-2" : "lg:order-1"
                     )}>
-                        <div className="lg:space-y-4 space-y-2">
+                        <div className="space-y-2">
                             <h2 className="text-[36px] lg:text-[52px] font-bold text-[#003459] leading-tight">
                                 {title}
                             </h2>
                             <h3 className="text-[24px] lg:text-[36px] font-semibold text-[#003459] leading-tight capitalize">
                                 {subtitle}
                             </h3>
-                            <p className="text-[#242B33] text-sm font-medium leading-relaxed max-w-md mx-auto lg:mx-0">
+                            <p className="text-[#242B33] text-[12px] font-medium leading-relaxed max-w-md mx-auto lg:mx-0">
                                 {description}
                             </p>
                         </div>
 
-                        <div className="flex flex-row justify-center lg:justify-start gap-3 lg:gap-[20px] w-full">
+                        <div className={cn("flex flex-row gap-3 lg:gap-[20px] w-full", buttonAlignmentClasses[buttonAlign])}>
                             <Button variant="outline" className="border-[#003459] text-[#003459] hover:bg-white/10 px-6 lg:px-8">
                                 View Intro <PlayCircle size={20} className="ml-2" />
                             </Button>
@@ -95,8 +100,16 @@ const FeatureSection = ({
                     <div className={cn(
                         "relative z-10 w-full lg:w-1/2 h-full flex justify-center items-end order-2",
                         imagePosition === 'left' ? "lg:order-1" : "lg:order-2"
-                    )}>
-                        <div className="relative w-full aspect-[4/3] lg:h-[500px]">
+                    )}
+                        style={{ padding: getImagePadding() }}
+                    >
+                        <div
+                            className="relative w-full aspect-[4/3] lg:h-[500px]"
+                            style={{
+                                ...(imageWidth && { width: imageWidth }),
+                                ...(imageHeight && { height: imageHeight })
+                            }}
+                        >
                             <Image
                                 src={image}
                                 alt={title}

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/Button';
 import { ChevronRight } from 'lucide-react';
 import { Container } from '@/components/Container';
 import PetSellers from '@/components/PetSellers';
+import { Rectangle } from '@/components/ui/Rectangle';
 
 const puppies = [
     {
@@ -90,7 +91,7 @@ export default function Home() {
                     </Button>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[20px]">
                     {puppies.map((puppy, i) => (
                         <PetCard key={i} {...puppy} />
                     ))}
@@ -111,6 +112,17 @@ export default function Home() {
                 imagePosition="left"
                 variant="dark-blue"
                 textAlign="right"
+                buttonAlign="end"
+                imageWidth="513px"
+                imageHeight="342px"
+                decorativeShapes={
+                    <>
+                        <Rectangle color="#FCEED5" width={787} height={787} rotation={118} borderRadius={99} bottom={-44} right={-196} className="lg:block hidden" />
+                        <Rectangle color="#FCEED5" width={787} height={787} rotation={118} borderRadius={99} bottom={348} right={-196} className="lg:hidden" />
+                        <Rectangle color="#002A48" width={787} height={787} rotation={118} borderRadius={99} bottom={-630} opacity={0.4} left={-137} className="lg:block hidden" />
+                        <Rectangle color="#002A48" width={782} height={782} rotation={118} borderRadius={99} bottom={-697} left={-137} className="lg:hidden" />
+                    </>
+                }
             />
 
             <PetSellers />
@@ -124,9 +136,14 @@ export default function Home() {
                     imagePosition="right"
                     variant="dark-blue"
                     backgroundColor='#FFB775'
-                    shape1Color='#FCEED5'
-                    shape2Color='#FCEED5'
-                    swapShapes={true}
+                    decorativeShapes={
+                        <>
+                            <Rectangle color="#FCEED5" width={787} height={787} rotation={60} borderRadius={99} bottom={-44} left={-196} className="lg:block hidden" />
+                            <Rectangle color="#FCEED5" width={787} height={787} rotation={60} borderRadius={99} bottom={265} left={-196} className="lg:hidden" />
+                            <Rectangle color="#FCEED5" width={787} height={787} rotation={60} borderRadius={99} bottom={-630} opacity={0.4} right={-137} className="lg:block hidden" />
+                            <Rectangle color="#FCEED5" width={782} height={782} rotation={60} borderRadius={99} bottom={-630} right={-137} className="lg:hidden" />
+                        </>
+                    }
                 />
             </div>
         </div>

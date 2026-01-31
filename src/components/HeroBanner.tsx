@@ -6,7 +6,7 @@ import { Rectangle } from './ui/Rectangle';
 
 const HeroBanner = () => {
     return (
-        <section className="relative overflow-hidden bg-monito-cream pt-[100px] lg:pt-[60px] lg:min-h-[600px] rounded-b-[40px] lg:rounded-b-[0px]">
+        <section className="relative overflow-hidden bg-monito-cream pt-[100px] lg:pt-[60px] lg:min-h-[600px] rounded-b-[40px]">
             {/* Background Gradient Approximation */}
             <div className="absolute inset-0 z-0 pointer-events-none"
                 style={{ background: 'linear-gradient(102.87deg, #FCEED5 6.43%, #FCEED5 78.33%, #FFE7BA 104.24%)' }}>
@@ -24,7 +24,7 @@ const HeroBanner = () => {
                     left={-73}
                     blendMode="multiply"
                     hideOnDesktop={true}
-                    animate={true}
+                    animate={false}
                     animationDuration={28}
                     animationDirection="normal"
                 />
@@ -37,7 +37,7 @@ const HeroBanner = () => {
                     top={415}
                     left={11.9}
                     hideOnDesktop={true}
-                    animate={true}
+                    animate={false}
                     animationDuration={32}
                     animationDirection="reverse"
                 />
@@ -50,7 +50,7 @@ const HeroBanner = () => {
                     bottom={616}
                     left={-254.1}
                     hideOnDesktop={true}
-                    animate={true}
+                    animate={false}
                     animationDuration={32}
                     animationDirection="reverse"
                 />
@@ -63,7 +63,7 @@ const HeroBanner = () => {
                     top={70}
                     right={76}
                     hideOnDesktop={true}
-                    animate={true}
+                    animate={false}
                     animationDuration={25}
                     animationDirection="reverse"
                 />
@@ -76,7 +76,7 @@ const HeroBanner = () => {
                     top={46}
                     right={36}
                     hideOnDesktop={true}
-                    animate={true}
+                    animate={false}
                     animationDuration={25}
                     animationDirection="reverse"
                 />
@@ -89,7 +89,7 @@ const HeroBanner = () => {
                     top={78}
                     right={82}
                     hideOnDesktop={true}
-                    animate={true}
+                    animate={false}
                     animationDuration={25}
                     animationDirection="reverse"
                 />
@@ -105,7 +105,7 @@ const HeroBanner = () => {
                     top={-639}
                     left={-353}
                     hideOnMobile={true}
-                    animate={true}
+                    animate={false}
                     animationDuration={30}
                     animationDirection="normal"
                 />
@@ -118,7 +118,7 @@ const HeroBanner = () => {
                     top={267}
                     right={118}
                     hideOnMobile={true}
-                    animate={true}
+                    animate={false}
                     animationDuration={25}
                     animationDirection="reverse"
                 />
@@ -131,7 +131,7 @@ const HeroBanner = () => {
                     top={79}
                     right={584}
                     hideOnMobile={true}
-                    animate={true}
+                    animate={false}
                     animationDuration={25}
                     animationDirection="reverse"
                 />
@@ -144,7 +144,7 @@ const HeroBanner = () => {
                     top={140}
                     right={613}
                     hideOnMobile={true}
-                    animate={true}
+                    animate={false}
                     animationDuration={25}
                     animationDirection="reverse"
                 />
@@ -157,7 +157,7 @@ const HeroBanner = () => {
                     top={148}
                     right={619}
                     hideOnMobile={true}
-                    animate={true}
+                    animate={false}
                     animationDuration={25}
                     animationDirection="reverse"
                 />
@@ -170,7 +170,7 @@ const HeroBanner = () => {
                     top={146}
                     left={22}
                     hideOnMobile={true}
-                    animate={true}
+                    animate={false}
                     animationDuration={25}
                     animationDirection="reverse"
                 />
@@ -184,7 +184,7 @@ const HeroBanner = () => {
                     left={-126.1}
                     opacity={0.4}
                     hideOnMobile={true}
-                    animate={true}
+                    animate={false}
                     animationDuration={25}
                     animationDirection="reverse"
                 />
@@ -197,7 +197,7 @@ const HeroBanner = () => {
                     top={229}
                     right={51}
                     hideOnMobile={true}
-                    animate={true}
+                    animate={false}
                     animationDuration={35}
                     animationDirection="normal"
                 />
