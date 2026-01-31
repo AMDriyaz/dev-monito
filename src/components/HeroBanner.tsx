@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Button } from './ui/Button';
 import { PlayCircle } from 'lucide-react';
 import { Container } from './Container';
+import { Rectangle } from './ui/Rectangle';
 
 const HeroBanner = () => {
     return (
@@ -11,22 +12,202 @@ const HeroBanner = () => {
                 style={{ background: 'linear-gradient(102.87deg, #FCEED5 6.43%, #FCEED5 78.33%, #FFE7BA 104.24%)' }}>
             </div>
 
-            {/* Decorative Elements - Mobile */}
-            <div className="absolute lg:hidden w-[529px] h-[529px] bg-[#F7DBA7] rounded-[48px] rotate-[16deg] top-[620px] left-[-11px] z-0 opacity-40 mix-blend-multiply pointer-events-none"></div>
-            <div className="absolute lg:hidden w-[529px] h-[529px] bg-[#003459] rounded-[48px] rotate-[36deg] top-[548px] left-[218px] z-0 opacity-100 pointer-events-none"></div>
-
-            {/* Decorative Elements - Desktop */}
-            <div className="hidden lg:block absolute w-[635px] h-[635px] bg-[#F7DBA7] rounded-[99px] rotate-[25.23deg] top-[-601px] left-[-251px] z-0 pointer-events-none"></div>
-            <div className="hidden lg:block absolute w-[635px] h-[635px] bg-[#003459] rounded-[99px] rotate-[14deg] top-[349px] right-[109px] z-0 pointer-events-none"></div>
-            <div className="hidden lg:block absolute w-[635px] h-[635px] bg-[#F7DBA7] rounded-[99px] rotate-[28deg] top-[301px] right-[60px] z-0 pointer-events-none"></div>
-
             <Container className="relative z-10 h-full">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 h-full items-center">
+                {/* Decorative Elements - Mobile */}
+                <Rectangle
+                    color="#003459"
+                    width={635}
+                    height={635}
+                    rotation={23}
+                    borderRadius={48}
+                    top={454}
+                    left={-73}
+                    blendMode="multiply"
+                    hideOnDesktop={true}
+                    animate={true}
+                    animationDuration={28}
+                    animationDirection="normal"
+                />
+                <Rectangle
+                    color="#F7DBA7"
+                    width={635}
+                    height={635}
+                    rotation={48}
+                    borderRadius={48}
+                    top={415}
+                    left={11.9}
+                    hideOnDesktop={true}
+                    animate={true}
+                    animationDuration={32}
+                    animationDirection="reverse"
+                />
+                <Rectangle
+                    color="#F7DBA7"
+                    width={635}
+                    height={635}
+                    rotation={15}
+                    borderRadius={48}
+                    bottom={616}
+                    left={-254.1}
+                    hideOnDesktop={true}
+                    animate={true}
+                    animationDuration={32}
+                    animationDirection="reverse"
+                />
+                <Rectangle
+                    color="#F7DBA7"
+                    width={15}
+                    height={15}
+                    rotation={58}
+                    borderRadius={4}
+                    top={70}
+                    right={76}
+                    hideOnDesktop={true}
+                    animate={true}
+                    animationDuration={25}
+                    animationDirection="reverse"
+                />
+                <Rectangle
+                    color="#F7DBA7"
+                    width={14}
+                    height={14}
+                    rotation={58}
+                    borderRadius={4}
+                    top={46}
+                    right={36}
+                    hideOnDesktop={true}
+                    animate={true}
+                    animationDuration={25}
+                    animationDirection="reverse"
+                />
+                <Rectangle
+                    color="#002A48"
+                    width={12}
+                    height={12}
+                    rotation={40}
+                    borderRadius={4}
+                    top={78}
+                    right={82}
+                    hideOnDesktop={true}
+                    animate={true}
+                    animationDuration={25}
+                    animationDirection="reverse"
+                />
+
+
+                {/* Decorative Elements - Desktop */}
+                <Rectangle
+                    color="#F7DBA7"
+                    width={635}
+                    height={635}
+                    rotation={25.23}
+                    borderRadius={99}
+                    top={-639}
+                    left={-353}
+                    hideOnMobile={true}
+                    animate={true}
+                    animationDuration={30}
+                    animationDirection="normal"
+                />
+                <Rectangle
+                    color="#003459"
+                    width={635}
+                    height={635}
+                    rotation={8}
+                    borderRadius={99}
+                    top={267}
+                    right={118}
+                    hideOnMobile={true}
+                    animate={true}
+                    animationDuration={25}
+                    animationDirection="reverse"
+                />
+                <Rectangle
+                    color="#F7DBA7"
+                    width={15}
+                    height={15}
+                    rotation={8}
+                    borderRadius={5}
+                    top={79}
+                    right={584}
+                    hideOnMobile={true}
+                    animate={true}
+                    animationDuration={25}
+                    animationDirection="reverse"
+                />
+                <Rectangle
+                    color="#F7DBA7"
+                    width={25}
+                    height={25}
+                    rotation={58}
+                    borderRadius={7}
+                    top={140}
+                    right={613}
+                    hideOnMobile={true}
+                    animate={true}
+                    animationDuration={25}
+                    animationDirection="reverse"
+                />
+                <Rectangle
+                    color="#002A48"
+                    width={21}
+                    height={21}
+                    rotation={40}
+                    borderRadius={7}
+                    top={148}
+                    right={619}
+                    hideOnMobile={true}
+                    animate={true}
+                    animationDuration={25}
+                    animationDirection="reverse"
+                />
+                <Rectangle
+                    color="#F7DBA7"
+                    width={61}
+                    height={61}
+                    rotation={22}
+                    borderRadius={20}
+                    top={146}
+                    left={22}
+                    hideOnMobile={true}
+                    animate={true}
+                    animationDuration={25}
+                    animationDirection="reverse"
+                />
+                <Rectangle
+                    color="#F7DBA7"
+                    width={635}
+                    height={635}
+                    rotation={22}
+                    borderRadius={99}
+                    top={604}
+                    left={-126.1}
+                    opacity={0.4}
+                    hideOnMobile={true}
+                    animate={true}
+                    animationDuration={25}
+                    animationDirection="reverse"
+                />
+                <Rectangle
+                    color="#F7DBA7"
+                    width={635}
+                    height={635}
+                    rotation={28}
+                    borderRadius={99}
+                    top={229}
+                    right={51}
+                    hideOnMobile={true}
+                    animate={true}
+                    animationDuration={35}
+                    animationDirection="normal"
+                />
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 h-full items-center">
 
                     {/* Text Content */}
-                    <div className="lg:col-span-5 relative z-20 flex flex-col items-start lg:pb-0">
-                        <div className="relative mb-6">
-                            <h1 className="text-[46px] lg:text-[60px] font-black leading-[60px] lg:leading-[68px] text-monito-blue mb-2">
+                    <div className="lg:col-span-5 relative z-20 flex flex-col items-start sm:items-center lg:items-start lg:pb-0">
+                        <div className="relative lg:mb-6 mb-3 text-left sm:text-center lg:text-left">
+                            <h1 className="text-[46px] lg:text-[60px] font-black leading-[60px] lg:leading-[68px] text-monito-blue">
                                 One More Friend
                             </h1>
                             <h2 className="text-[28px] lg:text-[46px] font-bold leading-[38px] lg:leading-[60px] text-monito-blue">
@@ -34,20 +215,20 @@ const HeroBanner = () => {
                             </h2>
                         </div>
 
-                        <p className="text-monito-neutral-80 text-[12px] lg:text-[16px] font-medium leading-[18px] lg:leading-[24px] mb-8 max-w-[480px]">
+                        <p className="text-monito-neutral-80 text-[12px] lg:text-[16px] font-medium leading-[18px] lg:leading-[24px] lg:mb-8 mb-[32px] max-w-[480px] text-left sm:text-center lg:text-left">
                             Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!
                         </p>
 
                         <div className="flex flex-row gap-4 w-full sm:w-auto">
                             <Button
                                 variant="outline"
-                                className="rounded-[57px] px-8 h-[48px] lg:h-[52px] border-[1.5px] border-monito-blue text-monito-blue font-medium text-[14px] lg:text-[16px] flex gap-2 items-center bg-transparent hover:bg-monito-blue/5"
+                                className="rounded-[57px] px-[35px] py-[14px] border-[1.5px] border-monito-blue text-monito-blue font-medium text-[14px] lg:text-[16px] flex gap-2 items-center bg-transparent hover:bg-monito-blue/5"
                             >
-                                View Intro <PlayCircle size={18} className="fill-monito-blue stroke-white" />
+                                View Intro <PlayCircle size={18} className="fill-transparent stroke-monito-blue" strokeWidth={2} />
                             </Button>
                             <Button
                                 variant="primary"
-                                className="rounded-[57px] px-8 h-[48px] lg:h-[52px] bg-monito-blue text-white font-medium text-[14px] lg:text-[16px] hover:bg-monito-blue/90"
+                                className="rounded-[57px] px-[35px] py-[14px] bg-[#003459] text-white font-medium text-[14px] lg:text-[16px] hover:bg-monito-blue/90"
                             >
                                 Explore Now
                             </Button>
@@ -58,7 +239,7 @@ const HeroBanner = () => {
                     <div className="lg:col-span-7 relative w-full h-full flex items-end justify-center lg:justify-end min-h-[300px] lg:min-h-[600px]">
 
                         {/* Desktop Image */}
-                        <div className="hidden lg:block relative w-[800px] h-[600px] -mr-[100px] -mb-[40px] z-10">
+                        <div className="hidden lg:block relative w-full lg:w-[700px] xl:min-w-[935px] xl:w-[935px] h-[600px] lg:top-0 lg:left-0 xl:top-[30px] xl:left-[124px] z-10">
                             <Image
                                 src="/images/hero_woman_corgi.png"
                                 alt="Woman holding Corgi"
@@ -69,7 +250,7 @@ const HeroBanner = () => {
                         </div>
 
                         {/* Mobile Image */}
-                        <div className="lg:hidden relative w-full h-full z-10">
+                        <div className="lg:hidden relative w-screen h-full z-10 -mx-4 sm:-mx-6">
                             <Image
                                 src="/images/groupdogs.png"
                                 alt="Group of dogs"

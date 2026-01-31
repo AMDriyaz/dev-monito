@@ -17,14 +17,14 @@ export default function Header() {
                 <div className="flex items-center justify-between relative">
 
                     {/* Left: Mobile Menu Toggle */}
-                    <div className="lg:hidden flex items-center z-20">
+                    <div className="xl:hidden flex items-center z-20">
                         <button onClick={() => setIsMenuOpen(true)}>
                             <Menu className="w-6 h-6 text-[#00171F]" />
                         </button>
                     </div>
 
                     {/* Center (Mobile) / Left (Desktop): Logo */}
-                    <div className="flex items-center gap-12 lg:relative absolute left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 z-20">
+                    <div className="flex items-center gap-12 xl:relative absolute left-1/2 -translate-x-1/2 xl:left-0 xl:translate-x-0 z-20">
                         <Link href="/" className="flex flex-col items-center">
                             <Image
                                 src="/images/logo.png"
@@ -36,7 +36,7 @@ export default function Header() {
                             />
                         </Link>
 
-                        <nav className="hidden lg:flex items-center gap-12 font-bold text-base leading-6 tracking-normal text-[#003459]">
+                        <nav className="hidden xl:flex items-center gap-12 font-bold text-base leading-6 tracking-normal text-[#003459]">
                             <Link href="/" className="hover:text-monito-blue/80">Home</Link>
                             <Link href="/category" className="hover:text-monito-blue/80">Category</Link>
                             <Link href="/about" className="hover:text-monito-blue/80">About</Link>
@@ -47,7 +47,7 @@ export default function Header() {
                     {/* Right: Actions */}
                     <div className="flex items-center gap-3.5 z-20">
                         {/* Mobile Search Icon & Toggle */}
-                        <div className="lg:hidden relative">
+                        <div className="xl:hidden relative">
                             {isSearchOpen ? (
                                 <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center bg-white rounded-full px-4 py-2 w-[200px] border border-gray-100 shadow-md z-30">
                                     <Search className="w-4 h-4 text-gray-400 mr-2 shrink-0" />
@@ -71,7 +71,7 @@ export default function Header() {
                         </div>
 
                         {/* Search Bar (Desktop) */}
-                        <div className="hidden lg:flex items-center bg-white rounded-full px-4 py-2.5 w-[280px] border border-gray-100 shadow-sm">
+                        <div className="hidden xl:flex items-center bg-white rounded-full px-4 py-2.5 w-[280px] border border-gray-100 shadow-sm">
                             <Search className="w-5 h-5 text-gray-400 mr-2" />
                             <input
                                 type="text"
@@ -81,12 +81,12 @@ export default function Header() {
                         </div>
 
                         {/* Join Button */}
-                        <button className="hidden lg:block bg-[#003459] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[#002a48] transition-colors">
+                        <button className="hidden xl:block bg-[#003459] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[#002a48] transition-colors">
                             Join the community
                         </button>
 
                         {/* Currency Selector */}
-                        <div className="hidden lg:flex items-center gap-1 cursor-pointer font-bold text-[#003459] ml-2">
+                        <div className="hidden xl:flex items-center gap-1 cursor-pointer font-bold text-[#003459] ml-2">
                             {/* Placeholder for VND Flag - using a simple circle or text if no image */}
                             <div className="w-5 h-5 rounded-full bg-red-600 flex items-center justify-center text-[8px] text-white border border-gray-200 overflow-hidden">
                                 <span className="text-yellow-400">★</span> {/* Vietnamese flag approximation */}
@@ -103,12 +103,12 @@ export default function Header() {
             <>
                 {/* Backdrop */}
                 <div
-                    className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 lg:hidden ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
+                    className={`fixed inset-0 bg-black/50 z-40 transition-opacity duration-300 xl:hidden ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}
                     onClick={() => setIsMenuOpen(false)}
                 />
 
                 {/* Drawer */}
-                <div className={`fixed top-0 left-0 w-[60%] sm:w-[50%] h-full bg-[#FDF8EB] z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+                <div className={`fixed top-0 left-0 w-[60%] sm:w-[50%] h-full bg-[#FDF8EB] z-50 transform transition-transform duration-300 ease-in-out xl:hidden ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                     <div className="p-6 flex flex-col h-full">
                         {/* Header with Close Icon */}
                         <div className="flex items-center justify-between mb-8">
