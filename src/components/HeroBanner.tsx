@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { Button } from './ui/Button';
-import { PlayCircle } from 'lucide-react';
 import { Container } from './Container';
 import { Rectangle } from './ui/Rectangle';
 
@@ -105,6 +104,7 @@ const HeroBanner = () => {
                     top={-639}
                     left={-336}
                     hideOnMobile={true}
+                    hideOnTablet={true}
                     animate={false}
                     animationDuration={30}
                     animationDirection="normal"
@@ -118,6 +118,7 @@ const HeroBanner = () => {
                     top={267}
                     right={118}
                     hideOnMobile={true}
+                    hideOnTablet={true}
                     animate={false}
                     animationDuration={25}
                     animationDirection="reverse"
@@ -184,6 +185,7 @@ const HeroBanner = () => {
                     left={-126.1}
                     opacity={0.4}
                     hideOnMobile={true}
+                    hideOnTablet={true}
                     animate={false}
                     animationDuration={25}
                     animationDirection="reverse"
@@ -197,8 +199,52 @@ const HeroBanner = () => {
                     top={229}
                     right={51}
                     hideOnMobile={true}
+                    hideOnTablet={true}
                     animate={false}
                     animationDuration={35}
+                    animationDirection="normal"
+                />
+
+                {/* Decorative Elements - Tablet Only (1024px-1279px) */}
+                <Rectangle
+                    color="#F7DBA7"
+                    width={400}
+                    height={400}
+                    rotation={25}
+                    borderRadius={80}
+                    top={-200}
+                    left={-150}
+                    showOnlyTablet={true}
+                    animate={false}
+                    animationDuration={30}
+                    animationDirection="normal"
+                />
+                <Rectangle
+                    color="#003459"
+                    width={350}
+                    height={350}
+                    rotation={15}
+                    borderRadius={70}
+                    top={350}
+                    right={-80}
+                    opacity={0.6}
+                    showOnlyTablet={true}
+                    animate={false}
+                    animationDuration={25}
+                    animationDirection="reverse"
+                />
+                <Rectangle
+                    color="#F7DBA7"
+                    width={300}
+                    height={300}
+                    rotation={20}
+                    borderRadius={60}
+                    bottom={-50}
+                    left={-80}
+                    opacity={0.5}
+                    showOnlyTablet={true}
+                    animate={false}
+                    animationDuration={28}
                     animationDirection="normal"
                 />
 
@@ -207,15 +253,15 @@ const HeroBanner = () => {
                     {/* Text Content */}
                     <div className="lg:col-span-5 relative z-20 flex flex-col items-start sm:items-center lg:items-start lg:pb-0">
                         <div className="relative lg:mb-6 mb-3 text-left sm:text-center lg:text-left">
-                            <h1 className="text-[46px] lg:text-[60px] font-extrabold leading-[60px] lg:leading-[68px] text-monito-blue">
+                            <h1 className="text-[46px] lg:text-[60px] font-extrabold leading-[60px] lg:leading-[68px] text-[#002A48]">
                                 One More Friend
                             </h1>
-                            <h2 className="text-[28px] lg:text-[46px] font-bold leading-[38px] lg:leading-[60px] text-monito-blue">
+                            <h2 className="text-[28px] lg:text-[46px] font-bold leading-[38px] lg:leading-[60px] text-[#002A48]">
                                 Thousands More Fun!
                             </h2>
                         </div>
 
-                        <p className="text-monito-neutral-80 text-[12px] lg:text-[16px] font-medium leading-[18px] lg:leading-[24px] lg:mb-8 mb-[32px] max-w-[480px] text-left sm:text-center lg:text-left">
+                        <p className="text-[#242B33] text-[12px] lg:text-[16px] font-medium leading-[18px] lg:leading-[24px] lg:mb-8 mb-[32px] max-w-[480px] text-left sm:text-center lg:text-left">
                             Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!
                         </p>
 
@@ -224,7 +270,7 @@ const HeroBanner = () => {
                                 variant="outline"
                                 className="rounded-[57px] px-[35px] py-[14px] border-[1.5px] border-monito-blue text-monito-blue font-medium text-[14px] lg:text-[16px] flex gap-2 items-center bg-transparent hover:bg-monito-blue/5"
                             >
-                                View Intro <PlayCircle size={18} className="fill-transparent stroke-monito-blue" strokeWidth={2} />
+                                View Intro <Image src="/images/play-icon.png" alt="Play" width={18} height={18} />
                             </Button>
                             <Button
                                 variant="primary"
@@ -237,9 +283,8 @@ const HeroBanner = () => {
 
                     {/* Image Content */}
                     <div className="lg:col-span-7 relative w-full h-full flex items-end justify-center lg:justify-end min-h-[300px] lg:min-h-[600px]">
-
                         {/* Desktop Image */}
-                        <div className="hidden lg:block relative w-full lg:w-[700px] xl:min-w-[935px] xl:w-[935px] h-[600px] lg:top-0 lg:left-0 xl:top-[30px] xl:left-[124px] z-10">
+                        <div className="hidden lg:block relative w-full lg:w-[700px] md:min-w-[935px] md:w-[935px] h-[600px] lg:left-[214px] xl:top-[30px] xl:left-[124px] z-10">
                             <Image
                                 src="/images/hero_woman_corgi.png"
                                 alt="Woman holding Corgi"

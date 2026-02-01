@@ -79,6 +79,16 @@ interface RectangleProps {
     hideOnDesktop?: boolean;
 
     /**
+     * Whether to hide on tablet (between lg and xl breakpoints: 1024px-1279px)
+     */
+    hideOnTablet?: boolean;
+
+    /**
+     * Whether to show only on tablet (between lg and xl breakpoints: 1024px-1279px)
+     */
+    showOnlyTablet?: boolean;
+
+    /**
      * Enable continuous rotation animation
      */
     animate?: boolean;
@@ -110,6 +120,8 @@ const Rectangle = ({
     zIndex = 0,
     hideOnMobile = false,
     hideOnDesktop = false,
+    hideOnTablet = false,
+    showOnlyTablet = false,
     animate = false,
     animationDuration = 20,
     animationDirection = 'normal',
@@ -136,7 +148,9 @@ const Rectangle = ({
     const baseClasses = "absolute pointer-events-none";
     const responsiveClasses = cn(
         hideOnMobile && "hidden lg:block",
-        hideOnDesktop && "lg:hidden"
+        hideOnDesktop && "lg:hidden",
+        hideOnTablet && "lg:hidden xl:block",
+        showOnlyTablet && "hidden lg:block xl:hidden"
     );
 
     return (

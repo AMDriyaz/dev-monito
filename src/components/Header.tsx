@@ -71,17 +71,17 @@ export default function Header() {
                         </div>
 
                         {/* Search Bar (Desktop) */}
-                        <div className="hidden xl:flex items-center bg-white rounded-full px-4 py-2.5 w-[280px] border border-gray-100 shadow-sm">
-                            <Search className="w-5 h-5 text-gray-400 mr-2" />
+                        <div className="hidden xl:flex items-center bg-white rounded-full px-4 py-[12px] w-[280px] h-[44px] border border-gray-100 shadow-sm">
+                            <Search className="w-5 h-5 text-gray-400 mr-[12px]" />
                             <input
                                 type="text"
                                 placeholder="Search something here!"
-                                className="bg-transparent border-none outline-none text-sm w-full text-gray-600 placeholder:text-gray-400"
+                                className="bg-transparent border-none outline-none text-sm w-full text-[#99A2A5] font-medium placeholder:text-gray-400"
                             />
                         </div>
 
                         {/* Join Button */}
-                        <button className="hidden xl:block bg-[#003459] text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[#002a48] transition-colors">
+                        <button className="hidden xl:block bg-[#003459] w-[203px] h-[44px] text-[#FDFDFD] px-[28px] py-[12px] rounded-full font-bold text-[16px] hover:bg-[#002a48] transition-colors">
                             Join the community
                         </button>
 

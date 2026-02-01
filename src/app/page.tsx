@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import HeroBanner from '@/components/HeroBanner';
 import PetCard from '@/components/PetCard';
 import FeatureSection from '@/components/FeatureSection';
@@ -116,10 +117,13 @@ export default function Home() {
                 imageHeight="342px"
                 decorativeShapes={
                     <>
-                        <Rectangle color="#FCEED5" width={787} height={787} rotation={118} borderRadius={99} bottom={-44} right={-196} className="lg:block hidden" />
+                        <Rectangle color="#FCEED5" width={787} height={787} rotation={118} borderRadius={99} bottom={-44} right={-196} className="xl:block hidden" />
                         <Rectangle color="#FCEED5" width={787} height={787} rotation={118} borderRadius={99} bottom={348} right={-196} className="lg:hidden" />
-                        <Rectangle color="#002A48" width={787} height={787} rotation={118} borderRadius={99} bottom={-630} opacity={0.4} left={-137} className="lg:block hidden" />
+                        <Rectangle color="#002A48" width={787} height={787} rotation={118} borderRadius={99} bottom={-630} opacity={0.4} left={-137} className="xl:block hidden" />
                         <Rectangle color="#002A48" width={782} height={782} rotation={118} borderRadius={99} bottom={-697} left={-137} className="lg:hidden" />
+                        {/* Tablet-only rectangles */}
+                        <Rectangle color="#FCEED5" width={800} height={800} rotation={118} borderRadius={120} bottom={-62} right={-128} zIndex={1} showOnlyTablet={true} />
+                        <Rectangle color="#002A48" width={400} height={400} rotation={118} borderRadius={70} bottom={-150} opacity={0.5} left={-80} showOnlyTablet={true} />
                     </>
                 }
             />
@@ -129,6 +133,7 @@ export default function Home() {
             <div className="lg:block hidden">
                 <FeatureSection
                     title="Adoption"
+                    titleIcon={<Image src="/images/paw-icon.png" alt="Paw" width={42} height={32} />}
                     subtitle="We need help. so do they."
                     description={
                         <>
@@ -140,12 +145,16 @@ export default function Home() {
                     imagePosition="right"
                     variant="dark-blue"
                     backgroundColor='#FFB775'
+                    swapButtons={true}
                     decorativeShapes={
                         <>
-                            <Rectangle color="#FCEED5" width={787} height={787} rotation={60} borderRadius={99} bottom={-44} left={-196} className="lg:block hidden" />
+                            <Rectangle color="#FCEED5" width={787} height={787} rotation={60} borderRadius={99} bottom={-44} left={-196} className="xl:block hidden" />
                             <Rectangle color="#FCEED5" width={787} height={787} rotation={60} borderRadius={99} bottom={265} left={-196} className="lg:hidden" />
-                            <Rectangle color="#FCEED5" width={787} height={787} rotation={60} borderRadius={99} bottom={-630} opacity={0.4} right={-137} className="lg:block hidden" />
+                            <Rectangle color="#FCEED5" width={787} height={787} rotation={60} borderRadius={99} bottom={-630} opacity={0.4} right={-137} className="xl:block hidden" />
                             <Rectangle color="#FCEED5" width={782} height={782} rotation={60} borderRadius={99} bottom={-630} right={-137} className="lg:hidden" />
+                            {/* Tablet-only rectangles */}
+                            <Rectangle color="#FCEED5" width={800} height={800} rotation={60} borderRadius={85} bottom={-35} left={-144} showOnlyTablet={true} />
+                            <Rectangle color="#FCEED5" width={380} height={380} rotation={60} borderRadius={65} bottom={-100} opacity={0.6} right={-90} showOnlyTablet={true} />
                         </>
                     }
                 />
