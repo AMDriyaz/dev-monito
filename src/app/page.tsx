@@ -122,7 +122,54 @@ export default function Home() {
                         <Rectangle color="#002A48" width={787} height={787} rotation={118} borderRadius={99} bottom={-630} opacity={0.4} left={-137} className="xl:block hidden" />
                         <Rectangle color="#002A48" width={782} height={782} rotation={118} borderRadius={99} bottom={-697} left={-137} className="lg:hidden" />
                         {/* Tablet-only rectangles */}
-                        <Rectangle color="#FCEED5" width={800} height={800} rotation={118} borderRadius={120} bottom={-62} right={-128} zIndex={1} showOnlyTablet={true} />
+                        {/* Rectangle for 1024px-1279px */}
+                        <Rectangle
+                            color="#FCEED5"
+                            width={800}
+                            height={800}
+                            rotation={118}
+                            borderRadius={120}
+                            bottom={-62}
+                            right={-128}
+                            zIndex={1}
+                            showOnlyTablet={true}
+                            tablet={{
+                                width: 800,
+                                height: 800,
+                                borderRadius: 120,
+                                bottom: -62,
+                                right: -128,
+                                zIndex: 1
+                            }}
+                            customBreakpoint={{
+                                minWidth: 1024,
+                                maxWidth: 1279
+                            }}
+                        />
+                        {/* Rectangle for 450px-1023px */}
+                        <Rectangle
+                            color="#FCEED5"
+                            width={997}
+                            height={997}
+                            rotation={118}
+                            borderRadius={120}
+                            bottom={-300}
+                            right={-181}
+                            zIndex={1}
+                            className="hidden sm:block lg:hidden"
+                            tablet={{
+                                width: 997,
+                                height: 997,
+                                borderRadius: 120,
+                                bottom: 300,
+                                right: -223,
+                                zIndex: 1
+                            }}
+                            customBreakpoint={{
+                                minWidth: 450,
+                                maxWidth: 1023
+                            }}
+                        />
                         <Rectangle color="#002A48" width={400} height={400} rotation={118} borderRadius={70} bottom={-150} opacity={0.5} left={-80} showOnlyTablet={true} />
                     </>
                 }

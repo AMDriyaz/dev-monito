@@ -102,6 +102,28 @@ interface RectangleProps {
      * Animation direction: 'normal' (clockwise) or 'reverse' (counter-clockwise)
      */
     animationDirection?: 'normal' | 'reverse';
+
+    /**
+     * Responsive properties for tablet breakpoint (default: 450px-1023px)
+     */
+    tablet?: {
+        width?: number;
+        height?: number;
+        borderRadius?: number;
+        top?: string | number;
+        left?: string | number;
+        right?: string | number;
+        bottom?: string | number;
+        zIndex?: number;
+    };
+
+    /**
+     * Custom breakpoint range for tablet styles (overrides default 450px-1023px)
+     */
+    customBreakpoint?: {
+        minWidth: number;
+        maxWidth: number;
+    };
 }
 
 const Rectangle = ({
@@ -125,7 +147,12 @@ const Rectangle = ({
     animate = false,
     animationDuration = 20,
     animationDirection = 'normal',
+    tablet,
+    customBreakpoint,
 }: RectangleProps) => {
+    // Generate unique ID for this rectangle instance
+    const uniqueId = `rect-${Math.random().toString(36).substr(2, 9)}`;
+
     const style: CSSProperties = {
         width: `${width}px`,
         height: `${height}px`,
@@ -153,11 +180,33 @@ const Rectangle = ({
         showOnlyTablet && "hidden lg:block xl:hidden"
     );
 
+    // Generate tablet-specific styles if tablet prop is provided
+    const minWidth = customBreakpoint?.minWidth ?? 450;
+    const maxWidth = customBreakpoint?.maxWidth ?? 1023;
+
+    const tabletStyles = tablet ? `
+        @media (min-width: ${minWidth}px) and (max-width: ${maxWidth}px) {
+            .${uniqueId} {
+                ${tablet.width !== undefined ? `width: ${tablet.width}px !important;` : ''}
+                ${tablet.height !== undefined ? `height: ${tablet.height}px !important;` : ''}
+                ${tablet.borderRadius !== undefined ? `border-radius: ${tablet.borderRadius}px !important;` : ''}
+                ${tablet.top !== undefined ? `top: ${typeof tablet.top === 'number' ? `${tablet.top}px` : tablet.top} !important;` : ''}
+                ${tablet.left !== undefined ? `left: ${typeof tablet.left === 'number' ? `${tablet.left}px` : tablet.left} !important;` : ''}
+                ${tablet.right !== undefined ? `right: ${typeof tablet.right === 'number' ? `${tablet.right}px` : tablet.right} !important;` : ''}
+                ${tablet.bottom !== undefined ? `bottom: ${typeof tablet.bottom === 'number' ? `${tablet.bottom}px` : tablet.bottom} !important;` : ''}
+                ${tablet.zIndex !== undefined ? `z-index: ${tablet.zIndex} !important;` : ''}
+            }
+        }
+    ` : '';
+
     return (
-        <div
-            className={cn(baseClasses, responsiveClasses, className)}
-            style={style}
-        />
+        <>
+            {tablet && <style dangerouslySetInnerHTML={{ __html: tabletStyles }} />}
+            <div
+                className={cn(baseClasses, responsiveClasses, className, uniqueId)}
+                style={style}
+            />
+        </>
     );
 };
 
